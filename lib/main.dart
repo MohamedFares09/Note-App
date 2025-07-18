@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:note_app/screen/home_screen.dart';
+import 'package:note_app/screen/note_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +11,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: HomeScreen(),
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData.dark(),
+      home: NoteScreen(),
     );
   }
 }
