@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:note_app/widget/app_bar_widget.dart';
-import 'package:note_app/widget/list_view_note.dart';
 
-class NoteScreenBody extends StatelessWidget {
-  const NoteScreenBody({super.key});
+class EditNoteScreenBody extends StatelessWidget {
+  const EditNoteScreenBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,11 +13,7 @@ class NoteScreenBody extends StatelessWidget {
           SizedBox(
             height: 20,
           ),
-          AppBarWidget(
-            title: "Note",
-            icon: Icons.search,
-          ),
-          Expanded(child: ListViewNote())
+          AppBarWidget(icon: Icons.check, title: "Edit Note")
         ],
       ),
     );

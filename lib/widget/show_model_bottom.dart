@@ -15,10 +15,42 @@ class ShowModelBottom extends StatelessWidget {
           ),
           CustomTextFiled(
             hintText: "Title",
-           
           ),
-          
+          SizedBox(
+            height: 16,
+          ),
+          CustomTextFiled(
+            hintText: "Content ",
+            maxLines: 4,
+          ),
+          Spacer(),
+          CustomButton()
         ],
+      ),
+    );
+  }
+}
+
+class CustomButton extends StatelessWidget {
+  const CustomButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 16),
+      child: Container(
+        height: 50,
+        width: MediaQuery.of(context).size.width,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8),
+          color: Colors.blue,
+        ),
+        child: Center(
+          child: Text(
+            "Add",
+            style: TextStyle(color: Colors.black),
+          ),
+        ),
       ),
     );
   }

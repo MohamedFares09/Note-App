@@ -1,26 +1,27 @@
 import 'package:flutter/material.dart';
 
 class AppBarWidget extends StatelessWidget {
-  const AppBarWidget({super.key});
-
+  const AppBarWidget({super.key ,required this.icon , required this.title});
+  final String title;
+  final IconData icon; 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
         Text(
-          "Note",
+          title,
           style: TextStyle(fontSize: 30),
         ),
         Spacer(),
-        IconWidget()
+        IconWidget(icon: icon,)
       ],
     );
   }
 }
 
 class IconWidget extends StatelessWidget {
-  const IconWidget({super.key});
-
+  const IconWidget({super.key, required this.icon});
+  final IconData icon;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -29,7 +30,7 @@ class IconWidget extends StatelessWidget {
       decoration: BoxDecoration(
           color: Colors.white.withOpacity(0.05),
           borderRadius: BorderRadius.circular(16)),
-      child: Icon(Icons.search),
+      child: Icon(icon),
     );
   }
 }

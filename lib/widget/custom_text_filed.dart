@@ -10,8 +10,9 @@ class CustomTextFiled extends StatelessWidget {
       maxLines: maxLines ?? 1,
       cursorColor: Colors.blue,
       decoration: InputDecoration(
+        
           hintText: hintText,
-          hintStyle: TextStyle(color: Colors.blue),
+          hintStyle: TextStyle(color: Colors.blue , ),
           border: buildBorder(),
           enabledBorder: buildBorder(),
           focusedBorder: buildBorder()),
