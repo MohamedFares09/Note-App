@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 class AppBarWidget extends StatelessWidget {
-  const AppBarWidget({super.key ,required this.icon , required this.title});
+  const AppBarWidget({super.key, required this.icon, required this.title , this.onPressed} );
   final String title;
-  final IconData icon; 
+  final IconData icon;
+   final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -13,15 +14,19 @@ class AppBarWidget extends StatelessWidget {
           style: TextStyle(fontSize: 30),
         ),
         Spacer(),
-        IconWidget(icon: icon,)
+        IconWidget(
+          icon: icon,
+          onPressed: onPressed,
+        )
       ],
     );
   }
 }
 
 class IconWidget extends StatelessWidget {
-  const IconWidget({super.key, required this.icon});
+  const IconWidget({super.key, required this.icon ,  this.onPressed});
   final IconData icon;
+ final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -30,7 +35,10 @@ class IconWidget extends StatelessWidget {
       decoration: BoxDecoration(
           color: Colors.white.withOpacity(0.05),
           borderRadius: BorderRadius.circular(16)),
-      child: Icon(icon),
+      child: IconButton(
+        onPressed: onPressed,
+        icon: Icon(icon),
+      ),
     );
   }
 }
