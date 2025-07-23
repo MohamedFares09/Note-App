@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:note_app/widget/note_screen_body.dart';
 import 'package:note_app/widget/show_model_bottom.dart';
-
 class NoteScreen extends StatelessWidget {
   const NoteScreen({super.key});
 
@@ -12,16 +11,14 @@ class NoteScreen extends StatelessWidget {
         backgroundColor: Colors.blue,
         onPressed: () {
           showModalBottomSheet(
-              // shape: RoundedRectangleBorder(
-              //     borderRadius: BorderRadius.circular(16)),
               context: context,
               builder: (context) {
-                return ShowModelBottom();
+                return const ShowModelBottom();
               });
         },
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
-      body: NoteScreenBody(),
+      body: const NoteScreenBody(),
     );
   }
 }

@@ -1,25 +1,26 @@
-import 'package:flutter/widgets.dart';
+import 'dart:developer';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AddBlocObserver implements BlocObserver {
   @override
   void onChange(BlocBase bloc, Change change) {
-    debugPrint("change = $change");
+    log("change = $change");
   }
 
   @override
   void onClose(BlocBase bloc) {
-    // TODO: implement onClose
+    log("close $bloc");
   }
 
   @override
   void onCreate(BlocBase bloc) {
-    // TODO: implement onCreate
+    log("create $bloc");
   }
 
   @override
   void onError(BlocBase bloc, Object error, StackTrace stackTrace) {
-    // TODO: implement onError
+   
   }
 
   @override
