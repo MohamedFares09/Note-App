@@ -14,7 +14,7 @@ void main() async {
   await Hive.openBox<NoteModel>("notes");
   runApp(
     BlocProvider(
-      create: (context) => NoteCubit() ,
+      create: (context) => NoteCubit()..getNote(),
       child: const MyApp(),
     ),
   );
