@@ -3,7 +3,7 @@ import 'package:note_app/cubit/cubit/note_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:note_app/cubit/add_note_cubit/add_note_cubit.dart';
 import 'package:note_app/cubit/add_note_cubit/add_note_state.dart';
-import 'package:note_app/widget/sheet_model_form.dart';
+import 'package:note_app/widget/show_model_sheet_form.dart';
 
 class ShowModelBottom extends StatelessWidget {
   const ShowModelBottom({super.key});
@@ -21,7 +21,7 @@ class ShowModelBottom extends StatelessWidget {
         },
         child: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: ModelFormSheetModel(),
+          child: ShowModelSheetForm(),
         ),
       ),
     );

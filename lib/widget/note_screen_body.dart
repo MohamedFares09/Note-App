@@ -18,6 +18,7 @@ class NoteScreenBody extends StatelessWidget {
             title: "Note",
             icon: Icons.search,
           ),
+          
           Expanded(child: ListViewNote())
         ],
       ),

@@ -4,17 +4,18 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:note_app/cubit/add_note_cubit/add_note_cubit.dart';
 import 'package:note_app/model/note_model.dart';
+import 'package:note_app/widget/colors_list_view.dart';
 import 'package:note_app/widget/custom_buttom.dart';
 import 'package:note_app/widget/custom_text_filed.dart';
 
-class ModelFormSheetModel extends StatefulWidget {
-  const ModelFormSheetModel({super.key});
+class ShowModelSheetForm extends StatefulWidget {
+  const ShowModelSheetForm({super.key});
 
   @override
-  State<ModelFormSheetModel> createState() => _ModelFormSheetModelState();
+  State<ShowModelSheetForm> createState() => _ShowModelSheetForm();
 }
 
-class _ModelFormSheetModelState extends State<ModelFormSheetModel> {
+class _ShowModelSheetForm extends State<ShowModelSheetForm> {
   GlobalKey<FormState> formKey = GlobalKey();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   String? title, subTitle;
@@ -44,13 +45,14 @@ class _ModelFormSheetModelState extends State<ModelFormSheetModel> {
             hintText: "Content ",
             maxLines: 4,
           ),
-          Spacer(),
+          ListViweColor(),
           CustomButton(
             onTap: () {
               if (formKey.currentState!.validate()) {
                 formKey.currentState!.save();
                 var currentDate = DateTime.now();
-                var formattedCurrentDate = DateFormat("dd-mm-yyyy").format(currentDate);
+                var formattedCurrentDate =
+                    DateFormat("dd-mm-yyyy").format(currentDate);
                 NoteModel note = NoteModel(
                     title: title!,
                     subtitle: subTitle!,
