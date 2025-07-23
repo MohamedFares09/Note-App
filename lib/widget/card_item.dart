@@ -13,16 +13,15 @@ class CardItem extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return EditNoteScreen(
-            noteModel: noteModel
-          );
+          return EditNoteScreen(noteModel: noteModel);
         }));
       },
       child: Padding(
         padding: const EdgeInsets.only(bottom: 8, top: 8),
         child: Container(
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(16), color: Colors.blue),
+            color: Color(noteModel.color),
+              borderRadius: BorderRadius.circular(16), ),
           child: Padding(
             padding: const EdgeInsets.only(top: 16, bottom: 16, left: 16),
             child: Column(
